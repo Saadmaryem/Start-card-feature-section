@@ -1,0 +1,200 @@
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    /* ###Primary */
+
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    /* ###Neutral */
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+p {
+    font-weight: 400;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+
+.container-Header {
+    text-align: left;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+/*
+       Make the container flexible please
+       example: min-height:100%;
+*/
+/*Desktop first*/
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 4rem;
+    position: relative;
+    min-height: 100%;
+    margin-top: 4rem;
+}
+
+.content {
+    /*It's recommended to remove the unit when there is 0.*/
+    margin-top: 0rem;
+    margin-left: 2rem;
+}
+
+.content h1 {
+    margin-left: 0;
+}
+
+.box-one,
+.box-two,
+.box-three,
+.box-four {
+    border-radius: 10px;
+    /*height: 100%;*/
+}
+
+.box-content + div {
+    flex-direction: column;
+}
+ 
+.box-content {
+    width: 400px;
+    margin: 1rem;
+}
+
+
+/* .box-content:nth-child(2),
+.box-content:nth-child(3) {
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.box-content:nth-child(4) {
+    right: 1rem;
+    top: 10rem;
+    position: absolute;
+    
+}
+
+.box-content div {
+    padding-top: 1rem;
+    padding-left: 0rem;
+    padding-bottom: 3rem;
+}
+
+/*It's recommended to add colors hex code to variables
+DRY: don't repeat yourself. make sure to refactor the code and don't repeat the same classes for each div.
+*/
+
+.box-one {
+    border-top: 1.2mm solid var(--cyan);
+}
+
+.box-two {
+    border-top: 1.2mm solid var(--blue);
+}
+
+.box-three {
+    border-top: 1.2mm solid var(--red);
+}
+
+.box-four {
+    border-top: 1.2mm solid var(--orange);
+}
+.box-one,
+.box-two,
+.box-three,
+.box-four{
+    position: relative;
+    background: var(--very-light-gray);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.box-one svg {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.box-two svg {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.box-three svg {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.box-four svg {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+svg {
+    float: right;
+}
+
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .box-content:nth-child(1){
+        right: 4rem;
+        top: 3rem;
+        
+    }
+    body {
+        background-color: tan;
+        color: black;
+    }
+
+    .container-Header {
+        text-align: center;
+    }
+}
+
+
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 767px) {
+    body {
+        background-color: olive;
+        color: black;
+    }
+    .container{
+        flex-direction: column;
+    
+    }
+    .container-Header {
+        text-align: left;
+        margin: 1rem;
+    }
+
+    .content {
+        text-align: left;
+    }
+    .box-content{
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+}
